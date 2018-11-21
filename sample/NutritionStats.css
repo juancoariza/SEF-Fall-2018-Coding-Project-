@@ -1,0 +1,42 @@
+/* Background color styling for entire AnchorPane */
+
+.background {
+    -fx-background-color: #96fffd;
+}
+
+/* Label Styling for stats screen's labels */
+
+#macronutrientPieChart, #weightLossLineGraph {
+    -fx-font-size: 15px;
+    -fx-font-style: italic;
+    -fx-font-fill: #333333;
+}
+
+#currWeightGoalStatLabel, #currWeightStatLabel, #lastWorkoutStatLabel {
+    -fx-font-size: 15px;
+    -fx-font-style: italic;
+    -fx-font-weight: bold;
+
+}
+
+#currWeightGoalVal, #currWeightVal, #lastWorkoutVal {
+    -fx-font-size: 15px;
+    -fx-font-style: italic;
+    -fx-underline: true;
+    -fx-text-fill: #3088d1;
+
+}
+
+/* Button styling */
+
+.button {
+    -fx-text-fill: white;
+    -fx-font-family: "Arial Narrow";
+    -fx-font-weight: bold;
+    -fx-background-color: linear-gradient(#61a2b1, #2A5058);
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(#2A5058, #61a2b1);
+}
