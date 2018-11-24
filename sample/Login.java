@@ -1,11 +1,9 @@
 package sample;
 
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -14,28 +12,19 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.regex.Pattern;
 
 
 public class Login implements Initializable {
 
-    /* Elements of the GUI screen*/
+    /***************************************************************
+     /* LOGIN FXML ELEMENTS
+     ****************************************************************/
 
     @FXML
     private AnchorPane mainLoginScreen;
-
-    @FXML
-    private PasswordField PasswordInfo;
-
-    @FXML
-    private Button loginButton;
-
-    @FXML
-    private Button signupButton;
 
     @FXML
     private Label mainPasswordLabel;
@@ -53,11 +42,46 @@ public class Login implements Initializable {
     private TextField UsernameInfo;
 
     @FXML
+    private PasswordField PasswordInfo;
+
+    @FXML
+    private Button loginButton;
+
+    @FXML
+    private Button signupButton;
+
+    @FXML
     private Label welcomeText;
 
     @FXML
     private Label hook;
 
+    /***************************************************************
+     /* METHODS RELATED TO INPUT VERIFICATION
+     ****************************************************************/
+    public void checkExistingAccount () throws IOException {
+
+        /*
+        if (UsernameInfo.getText() != databaseValue) {
+            existingUsernameErrorMSG.setVisible(true);
+
+
+        }
+
+        else {
+            existingUsernameErrorMSG.setVisible(false);
+        } */
+
+
+    }
+
+    public void checkCorrectPassword () throws IOException {}
+
+
+
+    /***************************************************************
+     /* METHODS RELATED TO BUTTON PRESS
+     ****************************************************************/
     @FXML
     private void handleButtonAction(ActionEvent event) throws IOException{
         
@@ -68,9 +92,11 @@ public class Login implements Initializable {
             //get reference to the button's stage         
             stage=(Stage) signupButton.getScene().getWindow();
             //load up OTHER FXML document
-            root = FXMLLoader.load(getClass().getResource("AccountCreate.fxml"));
+            root = FXMLLoader.load(getClass().getResource("CreateAccount.fxml"));
         }
         else{
+            // TODO: import input verification methods from CreateAccount.java here
+            // TODO: check for existing accounts (using text database)
             stage=(Stage) loginButton.getScene().getWindow();
             root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
         }
@@ -79,8 +105,10 @@ public class Login implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-    
 
+    /***************************************************************
+     /* ININTIALIZABLE
+     ****************************************************************/
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
