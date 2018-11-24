@@ -12,6 +12,10 @@ public class NutritionStats implements Initializable {
 
     testNutritionStatsDriver thisRun = new testNutritionStatsDriver();
 
+    /***************************************************************
+     /* NUTRITION STATISTICS DISPLAY FXML
+     ****************************************************************/
+
     @FXML
     private LineChart<?, ?> weightLossLineGraph;
 
@@ -40,6 +44,9 @@ public class NutritionStats implements Initializable {
     private Label lastWorkoutVal;
 
 
+    /***************************************************************
+     /* METHODS RELATED TO INFORMATION DISPLAY
+     ****************************************************************/
     /* The method currently reads values from a driver class. This will be replaced with an User class */
 
     public void generalLabelSettings() {
@@ -52,6 +59,9 @@ public class NutritionStats implements Initializable {
 
     }
 
+    /***************************************************************
+     /* INITIALIZABLE
+     ****************************************************************/
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         generalLabelSettings();
