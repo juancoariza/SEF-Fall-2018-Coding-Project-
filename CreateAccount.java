@@ -1,5 +1,8 @@
 package sample;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.Objects;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -17,6 +20,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.regex.Pattern;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class CreateAccount implements Initializable {
 
@@ -32,7 +39,9 @@ public class CreateAccount implements Initializable {
     private static String password;
     private static String userEmail;
 
-    public String getPassword() {
+
+
+    public static String getPassword() {
         return password;
     }
 
@@ -40,7 +49,7 @@ public class CreateAccount implements Initializable {
         this.password = password;
     }
 
-    public String getUserEmail() {
+    public static String getUserEmail() {
         return userEmail;
     }
 
@@ -158,8 +167,8 @@ public class CreateAccount implements Initializable {
 
         } else {
             passwordMismatchErrorMSG.setVisible(false);
-            setPassword(confirmPasswordInfo.toString());
             samePasswords = true;
+            setPassword(confirmPasswordInfo.getText());
         }
 
         return samePasswords;
@@ -182,10 +191,14 @@ public class CreateAccount implements Initializable {
                 if (checkEmailProperty(mainUsernameInfo) && checkPasswordLength(mainPasswordInfo)
                         && checkMatchingPasswords(mainPasswordInfo, confirmPasswordInfo)) {
 
+
                     // sends user to the program's main menu. All user data collected in the program screen
                     // can be called and save to their respective classes/databases here
-                    setUserEmail(mainEmailLabel.toString());
-                    setPassword(mainPasswordInfo.toString());
+                    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////EDIT THIS
+                    setUserEmail(mainUsernameInfo.getText());               ///TODO: THIS IS A MAJOR CHANGE
+                    setPassword(mainPasswordInfo.getText());                ///TODO:THIS IS A MAJOR CHANGE
+                ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
                     stage=(Stage) createAcctButton.getScene().getWindow();
                     //load up main menu FXML document
@@ -236,6 +249,10 @@ public class CreateAccount implements Initializable {
         });
 
     }
+
+
+
+
 
 
     /***************************************************************
