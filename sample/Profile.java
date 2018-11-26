@@ -1,99 +1,3 @@
-package sample;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
-
-import java.io.IOException;
-import java.net.URL;
-import java.util.List;
-import java.util.ResourceBundle;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-
-public class Profile implements Initializable {
-
-    /* USER DATA TO BE COLLECTED FOR FUTURE USE */
-    private String name;
-    private String username;
-    private char sex;
-    private int age;
-
-    //FILE LOCATION -- Used in method to print to text file
-    private static final String FILENAME = "src/sample/UserInfo.txt";
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public char getSex() {
-        return sex;
-    }
-
-    public void setSex(char sex) {
-        this.sex = sex;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    // Set user's sex and age on profile screen, and to display on choice box
-    ObservableList sexes = FXCollections.observableArrayList();
-    ObservableList ages = FXCollections.observableArrayList();
-
-    // workaround for populating an integer array with known values. Easier than hard-coding an array of integers
-    List<Integer> agesStream = IntStream.rangeClosed(13, 85).boxed().collect(Collectors.toList());
-
-    /***************************************************************
-     /* PROFILE'S ANCHOR PANE FXML ELEMENTS
-     ****************************************************************/
-
-    @FXML
-    private AnchorPane mainLoginScreen;
-
-    @FXML
-    private Button finalizeAcctButton;
-
-    @FXML
-    private Label acctText;
-
-    @FXML
-    private Label mainNameLabel;
-
-    @FXML
-    private TextField nameCollector;
 
     @FXML
     private Label ageLabel;
@@ -124,6 +28,13 @@ public class Profile implements Initializable {
 
     @FXML
     private Button imageChooserButton;
+
+    @FXML
+    private TextField TargetWeight;
+
+    @FXML
+    private TextField CurrentWeight;
+
 
     Stage stageHere;
     Parent rootHere;
@@ -191,6 +102,8 @@ public class Profile implements Initializable {
                 setUsername(usernameCollector.getText());
                 setAge(userAge.getSelectionModel().getSelectedItem());
                 setSex(userSex.getSelectionModel().getSelectedItem());
+                setCurrentWeight(CurrentWeight.getText());
+                setTargetWeight(TargetWeight.getText());
 
 
                 //Testing retrieval of information.
@@ -206,7 +119,7 @@ public class Profile implements Initializable {
                 String userEM = createdAcc.getUserEmail();
 
                 //Upload Information onto TextFile, using addUserInfoText Method
-                addUserInfoText(userEM,name,username,userPW,sex,age);
+                addUserInfoText(userEM,name,username,userPW,sex,age,currentweight,targetweight);
 
 
 
@@ -230,7 +143,7 @@ public class Profile implements Initializable {
     }
 
     //PRINT USERINFO TO TEXT FILE.............
-    public void addUserInfoText(String email, String name, String username, String password, char sex, int age) {
+    public void addUserInfoText(String email, String name, String username, String password, char sex, int age,String currweight,String targweight) {
         BufferedWriter bw = null;
         FileWriter fw = null;
 
@@ -261,6 +174,10 @@ public class Profile implements Initializable {
             bw.write("SX: " + sex);
             bw.newLine();
             bw.write("AG: " + age);
+            bw.newLine();
+            bw.write("CW: " + currweight);
+            bw.newLine();
+            bw.write("TW: " + targweight);
             bw.newLine();
 
 
