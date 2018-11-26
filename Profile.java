@@ -264,7 +264,6 @@ public class Profile implements Initializable {
             bw.write("AG: " + age);
             bw.newLine();
 
-            
 
         } catch (IOException e) {
 
