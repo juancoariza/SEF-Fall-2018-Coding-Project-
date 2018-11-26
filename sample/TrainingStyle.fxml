@@ -19,7 +19,7 @@
    <children>
       <ImageView fitHeight="500.0" fitWidth="600.0" layoutX="1.0">
          <image>
-            <Image url="sampleMainBackgroud.jpg" />
+            <Image url="@../../../iCodeFit/src/sample/Images/sampleMainBackgroud.jpg" />
          </image>
       </ImageView>
       <Label fx:id="login1stTimeMsg" layoutX="152.0" layoutY="14.0" text="Select Your Training Style" />

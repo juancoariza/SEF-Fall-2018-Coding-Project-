@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.effect.SepiaTone?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <SplitPane fx:id="workoutScreen" dividerPositions="0.3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="574.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.WorkoutSelect">
@@ -17,13 +18,16 @@
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
             <children>
                 <ListView fx:id="workoutSpecListview" prefHeight="438.0" prefWidth="397.0" />
-            <ButtonBar layoutX="153.0" layoutY="384.0" prefHeight="40.0" prefWidth="200.0">
+            <ButtonBar layoutX="213.0" layoutY="384.0" prefHeight="42.0" prefWidth="168.0">
               <buttons>
-                <Button fx:id="AddButton" mnemonicParsing="false" onAction="#ExerciseAdd" text="Add" />
-                  <Button fx:id="StartButton" mnemonicParsing="false" onAction="#StartWorkout" text="Start" />
+                  <Button fx:id="AddButton" mnemonicParsing="false" onAction="#ExerciseAdd" text="Add" />
+                <Button fx:id="StartButton" mnemonicParsing="false" onAction="#StartWorkout" text="Start" />
               </buttons>
+               <effect>
+                  <SepiaTone />
+               </effect>
             </ButtonBar>
-            <Label fx:id="WorkoutLabel" layoutX="199.0" layoutY="142.0" prefHeight="223.0" prefWidth="169.0" style="-fx-border-color: #4286f4;" />
+            <Label fx:id="WorkoutLabel" layoutX="201.0" layoutY="152.0" prefHeight="232.0" prefWidth="181.0" style="-fx-border-color: #4286f4#4286f4;" />
             </children>
         </AnchorPane>
     </items>
