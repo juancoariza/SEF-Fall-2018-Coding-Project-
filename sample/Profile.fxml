@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="mainLoginScreen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" stylesheets="@Profile.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Profile">
+<AnchorPane fx:id="mainLoginScreen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" stylesheets="@Profile.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Profile">
     <padding>
         <Insets bottom="200.0" left="200.0" right="200.0" top="200.0" />
     </padding>
@@ -35,5 +35,9 @@
         <ImageView fx:id="profilePic" fitHeight="250.0" fitWidth="250.0" layoutX="304.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true" />
         <Label fx:id="photoLabel" layoutX="307.0" layoutY="84.0" text="Profile Photo" />
         <Button fx:id="imageChooserButton" layoutX="367.0" layoutY="371.0" mnemonicParsing="false" text="Choose Profile Picture " />
+      <Label layoutX="166.0" layoutY="333.0" text="Target Weight" />
+      <TextField fx:id="TargetWeight" layoutX="172.0" layoutY="359.0" prefHeight="25.0" prefWidth="64.0" />
+      <Label layoutX="62.0" layoutY="333.0" text="Current Weight" />
+      <TextField fx:id="CurrentWeight" layoutX="68.0" layoutY="359.0" prefHeight="25.0" prefWidth="64.0" />
     </children>
 </AnchorPane>
