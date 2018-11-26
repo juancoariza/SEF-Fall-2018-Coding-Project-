@@ -1,5 +1,8 @@
 package sample;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -31,6 +34,9 @@ public class Profile implements Initializable {
     private String username;
     private char sex;
     private int age;
+
+    //FILE LOCATION -- Used in method to print to text file
+    private static final String FILENAME = "src/sample/UserInfo.txt";
 
     public String getName() {
         return name;
@@ -182,10 +188,29 @@ public class Profile implements Initializable {
             public void handle(ActionEvent event) {
                 // if the user proceeds to create an account and profile, all input data will be saved and the program
                 // will load the main menu screen
-                setName(nameCollector.toString());
-                setUsername(usernameCollector.toString());
+                setName(nameCollector.getText());
+                setUsername(usernameCollector.getText());
                 setAge(userAge.getSelectionModel().getSelectedItem());
                 setSex(userSex.getSelectionModel().getSelectedItem());
+
+
+                //Testing retrieval of information.
+//                System.out.println("Print Name: " + name);
+//                System.out.println("Print UserName: " + username);
+//                System.out.println("Print Age: " + age);
+//                System.out.println("Print Sex: " + sex);
+
+
+                //Retrieving Account UN & PW From previous screen
+                CreateAccount createdAcc = new CreateAccount();
+                String userPW = createdAcc.getPassword();
+                String userEM = createdAcc.getUserEmail();
+
+                //Upload Information onto TextFile, using addUserInfoText Method
+                addUserInfoText(userEM,name,username,userPW,sex,age);
+
+
+
                 // TODO: save the user's selected image
 
 
@@ -205,7 +230,69 @@ public class Profile implements Initializable {
 
     }
 
+    //PRINT USERINFO TO TEXT FILE.............
+    public void addUserInfoText(String email, String name, String username, String password, char sex, int age) {
+        BufferedWriter bw = null;
+        FileWriter fw = null;
 
+        try {
+
+
+            File file = new File(FILENAME);
+
+            // if file doesn't exists, then create it
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+
+            // true = append file
+            fw = new FileWriter(file.getAbsoluteFile(), true);
+            bw = new BufferedWriter(fw);
+
+            bw.write("------------------");
+            bw.newLine();
+            bw.write("EM: "+ email);
+            bw.newLine();
+            bw.write("NM: " + name);
+            bw.newLine();
+            bw.write("UN: " + username);
+            bw.newLine();
+            bw.write("PW: "+ password);
+            bw.newLine();
+            bw.write("SX: " + sex);
+            bw.newLine();
+            bw.write("AG: " + age);
+            bw.newLine();
+
+            
+
+        } catch (IOException e) {
+
+            e.printStackTrace();
+
+        } finally {
+
+            try {
+
+                if (bw != null) {
+                    bw.close();
+                }
+
+                if (fw != null) {
+                    fw.close();
+                }
+
+            } catch (IOException ex) {
+
+                ex.printStackTrace();
+
+            }
+        }
+
+
+
+
+    }
     /***************************************************************
      /* INITIALIZABLE
      ****************************************************************/
