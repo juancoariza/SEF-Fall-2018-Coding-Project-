@@ -1,5 +1,4 @@
 package sample;
-
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -157,7 +156,8 @@ public class MainMenu implements Initializable {
 
         else if (event.getSource() == nutritionStatsButton) {
 
-            fithubAnchor.getChildren().setAll((Node) FXMLLoader.load(getClass().getResource("NutritionStats.fxml")));
+            fithubAnchor.getChildren().setAll((Node) FXMLLoader.load(getClass().getResource(
+                "NutritionStats.fxml")));
 
         }
 
@@ -169,7 +169,8 @@ public class MainMenu implements Initializable {
 
         else if (event.getSource() == nutritionTrackerButton) {
 
-            fithubAnchor.getChildren().setAll((Node) FXMLLoader.load(getClass().getResource("NutritionTracker.fxml")));
+            fithubAnchor.getChildren().setAll((Node) FXMLLoader.load(getClass().getResource(
+                "NutritionTracker.fxml")));
 
         } else {
 
@@ -199,4 +200,6 @@ public class MainMenu implements Initializable {
 
 
     }
+
+
 }

@@ -1,10 +1,9 @@
-package sample;
-
 /***************************************************************
  /* The following is the user class. All the data in this class
  /* is gathered from previous FXML GUI screens and methods within
  ****************************************************************/
 
+package sample;
 public class User {
 
     /***************************************************************

@@ -1,12 +1,18 @@
 package sample;
-
+import java.awt.event.ActionEvent;
+import java.io.IOException;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.PieChart;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.stage.Stage;
 
 public class NutritionStats implements Initializable {
 
@@ -43,6 +49,9 @@ public class NutritionStats implements Initializable {
     @FXML
     private Label lastWorkoutVal;
 
+    @FXML
+    private Button returnToFitHub;
+
 
     /***************************************************************
      /* METHODS RELATED TO INFORMATION DISPLAY
@@ -66,5 +75,30 @@ public class NutritionStats implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         generalLabelSettings();
 
+    }
+
+    /***************************************************************
+     /* METHODS RELATED TO BUTTON PRESS
+     ****************************************************************/
+    @FXML
+    private void handleButtonAction(ActionEvent event) throws IOException {
+
+        Stage stage;
+        Parent root;
+
+        if(event.getSource()==returnToFitHub){
+            //get reference to the button's stage
+            stage=(Stage) returnToFitHub.getScene().getWindow();
+            //load up OTHER FXML document
+            root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
+        }
+        else{
+            stage=(Stage) returnToFitHub.getScene().getWindow();
+            root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
+        }
+        //create a new scene with root and set the stage
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 }

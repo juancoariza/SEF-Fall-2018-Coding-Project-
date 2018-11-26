@@ -1,5 +1,6 @@
 package sample;
 
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,30 +11,29 @@ import java.io.IOException;
 
 public class Main extends Application {
 
-    static Stage window;
+  static Stage window;
 
-    @Override
-    public void start(Stage primaryStage) throws Exception{
+  @Override
+  public void start(Stage primaryStage) throws Exception {
 
-        window = primaryStage;
+    window = primaryStage;
 
+    Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
+    primaryStage.setTitle("iCodeFit");
+    primaryStage.setResizable(false);
+    primaryStage.setScene(new Scene(root));
+    primaryStage.show();
+  }
 
-        Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
-        primaryStage.setTitle("iCodeFit");
-        primaryStage.setResizable(false);
-        primaryStage.setScene(new Scene(root));
-        primaryStage.show();
-    }
+  public void changeScene(String fxml) throws IOException {
 
-    public void changeScene(String fxml) throws IOException {
+    Parent pane = FXMLLoader.load(getClass().getResource(fxml));
+    Scene scene = new Scene(pane);
+    window.setScene(scene);
 
-        Parent pane = FXMLLoader.load(getClass().getResource(fxml));
-        Scene scene = new Scene(pane);
-        window.setScene(scene);
+  }
 
-    }
-
-    public static void main(String[] args) {
-        launch(args);
-    }
+  public static void main(String[] args) {
+    launch(args);
+  }
 }
