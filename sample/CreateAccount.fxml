@@ -8,21 +8,21 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="mainLoginScreen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" styleClass="root" stylesheets="@CreateAccount.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.CreateAccount">
+<AnchorPane fx:id="mainLoginScreen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" styleClass="root" stylesheets="@CreateAccount.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.CreateAccount">
     <padding>
         <Insets bottom="200.0" left="200.0" right="200.0" top="200.0" />
     </padding>
     <children>
-        <PasswordField fx:id="mainPasswordInfo" layoutX="132.0" layoutY="191.0" prefHeight="37.0" prefWidth="307.0" promptText="Enter password:">
+        <PasswordField fx:id="mainPasswordInfo" layoutX="135.0" layoutY="225.0" prefHeight="37.0" prefWidth="307.0" promptText="Enter password:">
             <padding>
                 <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
             </padding>
         </PasswordField>
-        <Button fx:id="createAcctButton" layoutX="135.0" layoutY="423.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" stylesheets="@iCodeFitAccountCreateStyle.css" text="Create account" />
-        <Label fx:id="mainPasswordLabel" layoutX="133.0" layoutY="165.0" text="Password" />
-        <Label fx:id="mainEmailLabel" layoutX="133.0" layoutY="75.0" stylesheets="@iCodeFitAccountCreateStyle.css" text="Email" />
-        <TextField fx:id="mainUsernameInfo" layoutX="130.0" layoutY="105.0" prefHeight="25.0" prefWidth="307.0" promptText="Enter email address: (sample@mail.com)" />
-        <Label fx:id="acctText" layoutX="183.0" layoutY="27.0" prefHeight="48.0" prefWidth="238.0" stylesheets="@iCodeFitAccountCreateStyle.css" text="Create An Account" textAlignment="CENTER">
+        <Button fx:id="createAcctButton" layoutX="135.0" layoutY="423.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" stylesheets="@CreateAccount.css" text="Create account" />
+        <Label fx:id="mainPasswordLabel" layoutX="135.0" layoutY="188.0" text="Password" />
+        <Label fx:id="mainEmailLabel" layoutX="135.0" layoutY="94.0" stylesheets="@CreateAccount.css" text="Email" />
+        <TextField fx:id="mainUsernameInfo" layoutX="132.0" layoutY="124.0" prefHeight="25.0" prefWidth="307.0" promptText="Enter email address: (sample@mail.com)" />
+        <Label fx:id="acctText" layoutX="183.0" layoutY="27.0" prefHeight="48.0" prefWidth="251.0" stylesheets="@CreateAccount.css" text="Create An Account" textAlignment="CENTER">
             <padding>
                 <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
             </padding>
@@ -30,15 +30,15 @@
                 <Font name="Lucida Sans Demibold" size="12.0" />
             </font>
         </Label>
-        <PasswordField fx:id="confirmPasswordInfo" layoutX="132.0" layoutY="301.0" prefHeight="37.0" prefWidth="307.0" promptText="Enter password:">
+        <PasswordField fx:id="confirmPasswordInfo" layoutX="135.0" layoutY="325.0" prefHeight="37.0" prefWidth="307.0" promptText="Enter password:">
             <padding>
                 <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
             </padding>
         </PasswordField>
-        <Label fx:id="confirmPasswordLabel" layoutX="136.0" layoutY="271.0" text="Confirm Password" />
+        <Label fx:id="confirmPasswordLabel" layoutX="139.0" layoutY="295.0" text="Confirm Password" />
         <Button fx:id="cancelToLoginMain" layoutX="300.0" layoutY="423.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" text="Cancel" />
-        <Label fx:id="shortPasswordErrorMSG" layoutX="134.0" layoutY="228.0" text="* Password must be at minimum eight (8) characters" />
-        <Label fx:id="passwordMismatchErrorMSG" layoutX="136.0" layoutY="345.0" text="* Passwords do not match. Please try again" />
-        <Label fx:id="invalidEmailErrorMSG" layoutX="130.0" layoutY="130.0" text="* Incorrect email format. Please try again" />
+        <Label fx:id="shortPasswordErrorMSG" layoutX="135.0" layoutY="262.0" text="* Password must be at minimum eight (8) characters" />
+        <Label fx:id="passwordMismatchErrorMSG" layoutX="139.0" layoutY="369.0" text="* Passwords do not match. Please try again" />
+        <Label fx:id="invalidEmailErrorMSG" layoutX="132.0" layoutY="149.0" text="* Incorrect email format. Please try again" />
     </children>
 </AnchorPane>
