@@ -1,4 +1,7 @@
 package sample;
+
+import java.io.File;
+import java.util.Scanner;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,47 +21,51 @@ import java.util.ResourceBundle;
 
 public class Login implements Initializable {
 
-    /***************************************************************
-     /* LOGIN FXML ELEMENTS
-     ****************************************************************/
+  /***************************************************************
+   /* LOGIN FXML ELEMENTS
+   ****************************************************************/
 
-    @FXML
-    private AnchorPane mainLoginScreen;
+  User user = new User();
+  String password = "";
+  String email = "";
 
-    @FXML
-    private Label mainPasswordLabel;
+  @FXML
+  private AnchorPane mainLoginScreen;
 
-    @FXML
-    private Label mainUsernameLabel;
+  @FXML
+  private Label mainPasswordLabel;
 
-    @FXML
-    private Label existingUsernameErrorMSG;
+  @FXML
+  private Label mainUsernameLabel;
 
-    @FXML
-    private Label existingPasswordErrorMSG;
+  @FXML
+  private Label existingUsernameErrorMSG;
 
-    @FXML
-    private TextField UsernameInfo;
+  @FXML
+  private Label existingPasswordErrorMSG;
 
-    @FXML
-    private PasswordField PasswordInfo;
+  @FXML
+  private TextField mainUsernameInfo;
 
-    @FXML
-    private Button loginButton;
+  @FXML
+  private PasswordField mainPasswordInfo;
 
-    @FXML
-    private Button signupButton;
+  @FXML
+  private Button loginButton;
 
-    @FXML
-    private Label welcomeText;
+  @FXML
+  private Button signupButton;
 
-    @FXML
-    private Label hook;
+  @FXML
+  private Label welcomeText;
 
-    /***************************************************************
-     /* METHODS RELATED TO INPUT VERIFICATION
-     ****************************************************************/
-    public void checkExistingAccount () throws IOException {
+  @FXML
+  private Label hook;
+
+  /***************************************************************
+   /* METHODS RELATED TO INPUT VERIFICATION
+   ****************************************************************/
+  public void checkExistingAccount() throws IOException {
 
         /*
         if (UsernameInfo.getText() != databaseValue) {
@@ -71,17 +78,16 @@ public class Login implements Initializable {
             existingUsernameErrorMSG.setVisible(false);
         } */
 
+  }
 
-    }
-
-    public void checkCorrectPassword () throws IOException {}
-
+  public void checkCorrectPassword() throws IOException {
+  }
 
 
-    /***************************************************************
-     /* METHODS RELATED TO BUTTON PRESS
-     ****************************************************************/
-     @FXML
+  /***************************************************************
+   /* METHODS RELATED TO BUTTON PRESS
+   ****************************************************************/
+  @FXML
   void handleSignup(ActionEvent event) throws Exception {
     Stage stage;
     Parent root;
@@ -94,8 +100,8 @@ public class Login implements Initializable {
     stage.setScene(scene);
     stage.show();
   }
-    
-   @FXML
+
+  @FXML
   void handleLogin(ActionEvent event) throws Exception {
 
     Stage stage;
@@ -109,13 +115,14 @@ public class Login implements Initializable {
       Scene scene = new Scene(root);
       stage.setScene(scene);
       stage.show();
-    }
-    else{
+    } else {
       System.out.println("Passwords are not the same");
     }
-    
-     
-    public void searchUsers() {
+
+
+  }
+
+  public void searchUsers() {
     try {
       Scanner sc = new Scanner(new File("src/sample/UserInfo.txt"));
       while (sc.hasNextLine()) {
@@ -138,17 +145,18 @@ public class Login implements Initializable {
       System.out.println(ex);
     }
 
+
   }
+  /***************************************************************
+   /* ININTIALIZABLE
+   ****************************************************************/
+  @Override
+  public void initialize (URL location, ResourceBundle resources){
 
-    /***************************************************************
-     /* ININTIALIZABLE
-     ****************************************************************/
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-
-        existingPasswordErrorMSG.setVisible(false);
-        existingUsernameErrorMSG.setVisible(false);
-    }
+    existingPasswordErrorMSG.setVisible(false);
+    existingUsernameErrorMSG.setVisible(false);
+  }
 }
+
 
 
