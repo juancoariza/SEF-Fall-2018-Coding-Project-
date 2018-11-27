@@ -32,8 +32,8 @@ public class Profile implements Initializable {
     /* USER DATA TO BE COLLECTED FOR FUTURE USE */
     private String name;
     private String username;
-    private char sex;
-    private int age;
+    private String sex;
+    private String age;
     private String currentweight;
     private String targetweight;
 
@@ -56,19 +56,19 @@ public class Profile implements Initializable {
         this.username = username;
     }
 
-    public char getSex() {
+    public String getSex() {
         return sex;
     }
 
-    public void setSex(char sex) {
+    public void setSex(String sex) {
         this.sex = sex;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 
