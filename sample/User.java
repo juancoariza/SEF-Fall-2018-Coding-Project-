@@ -17,8 +17,11 @@ public class User {
     // collected from Profile creation
     String name;
     String username;
-    char sex;
-    int age;
+    String sex;
+    String age;
+    String targetWeight;
+    String currentWeight;
+    
 
 
     // Default constructor
@@ -33,6 +36,8 @@ public class User {
         username = profileRefer.getUsername();
         sex = profileRefer.getSex();
         age = profileRefer.getSex();
+        targetWeight = profileRefer.getTargetWeight();
+        currentWeight = profileRefer.getCurrentWeight();
 
     }
 
