@@ -94,6 +94,8 @@ public class Login implements Initializable {
             root = FXMLLoader.load(getClass().getResource("CreateAccount.fxml"));
         }
         else{
+            //SearchUser Method to retrieve password from textfile via email input
+            searchUsers();
             // TODO: import input verification methods from CreateAccount.java here
             // TODO: check for existing accounts (using text database)
             stage=(Stage) loginButton.getScene().getWindow();
@@ -105,6 +107,27 @@ public class Login implements Initializable {
         stage.show();
     }
 
+    public void searchUsers() {
+    try {
+      Scanner sc = new Scanner(new File("src/sample/UserInfo.txt"));
+      while (sc.hasNextLine()) {
+        String line = sc.nextLine().substring(4);
+        if (mainUsernameInfo.getText().equals(line)) {
+          System.out.println("Email has been found");
+          sc.nextLine();
+          sc.nextLine();
+          password = sc.nextLine().substring(4);
+          System.out.println(password);
+        } else {
+
+        }
+      }
+    } catch (Exception ex) {
+      System.out.println(ex);
+    }
+
+  }
+    
     /***************************************************************
      /* ININTIALIZABLE
      ****************************************************************/
