@@ -219,8 +219,8 @@ public class Profile implements Initializable {
                 // will load the main menu screen
                 setName(nameCollector.getText());
                 setUsername(usernameCollector.getText());
-                setAge(userAge.getSelectionModel().getSelectedItem());
-                setSex(userSex.getSelectionModel().getSelectedItem());
+                setAge(userAge.getSelectionModel().getSelectedItem().toString());
+                setSex(userSex.getSelectionModel().getSelectedItem().toString());
                 setCurrentWeight(CurrentWeight.getText());
                 setTargetWeight(TargetWeight.getText());
 
@@ -262,7 +262,7 @@ public class Profile implements Initializable {
     }
 
     //PRINT USERINFO TO TEXT FILE.............
-    public void addUserInfoText(String email, String name, String username, String password, char sex, int age,String currweight,String targweight) {
+    public void addUserInfoText(String email, String name, String username, String password, String sex, String age,String currweight,String targweight) {
         BufferedWriter bw = null;
         FileWriter fw = null;
 
@@ -341,4 +341,6 @@ public class Profile implements Initializable {
         handleProfileActions();
 
     }
+}
+
 }
