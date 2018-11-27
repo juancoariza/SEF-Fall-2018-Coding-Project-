@@ -81,29 +81,64 @@ public class Login implements Initializable {
     /***************************************************************
      /* METHODS RELATED TO BUTTON PRESS
      ****************************************************************/
-    @FXML
-    private void handleButtonAction(ActionEvent event) throws IOException{
-        
-        Stage stage;
-        Parent root;
-        
-        if(event.getSource()==signupButton){
-            //get reference to the button's stage         
-            stage=(Stage) signupButton.getScene().getWindow();
-            //load up OTHER FXML document
-            root = FXMLLoader.load(getClass().getResource("CreateAccount.fxml"));
-        }
-        else{
-            // TODO: import input verification methods from CreateAccount.java here
-            // TODO: check for existing accounts (using text database)
-            stage=(Stage) loginButton.getScene().getWindow();
-            root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
-        }
-        //create a new scene with root and set the stage
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+     @FXML
+  void handleSignup(ActionEvent event) throws Exception {
+    Stage stage;
+    Parent root;
+
+//  get reference to the button's stage
+    stage = (Stage) signupButton.getScene().getWindow();
+    //load up OTHER FXML document
+    root = FXMLLoader.load(getClass().getResource("CreateAccount.fxml"));
+    Scene scene = new Scene(root);
+    stage.setScene(scene);
+    stage.show();
+  }
+    
+   @FXML
+  void handleLogin(ActionEvent event) throws Exception {
+
+    Stage stage;
+    Parent root;
+    //Search user method
+    searchUsers();
+
+    if (mainPasswordInfo.getText().equals(password)) {
+      stage = (Stage) loginButton.getScene().getWindow();
+      root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
+      Scene scene = new Scene(root);
+      stage.setScene(scene);
+      stage.show();
     }
+    else{
+      System.out.println("Passwords are not the same");
+    }
+    
+     
+    public void searchUsers() {
+    try {
+      Scanner sc = new Scanner(new File("src/sample/UserInfo.txt"));
+      while (sc.hasNextLine()) {
+        String line = sc.nextLine().substring(4);
+        if (mainUsernameInfo.getText().equals(line)) {
+          System.out.println("Email has been found");
+          user.name = sc.nextLine().substring(4);
+          user.username = sc.nextLine().substring(4);
+          password = sc.nextLine().substring(4);          ///MAKE SEX STRING
+          user.sex = sc.nextLine().substring(4);          ///MAKE AGE STRING
+          user.age = sc.nextLine().substring(4);
+          user.targetWeight = sc.nextLine().substring(4);       ///ADD TARGET WEIGHT
+          user.currentWeight = sc.nextLine().substring(4);    ///AD CURRENT WEIGHT
+          System.out.println(password);
+        } else {
+
+        }
+      }
+    } catch (Exception ex) {
+      System.out.println(ex);
+    }
+
+  }
 
     /***************************************************************
      /* ININTIALIZABLE
