@@ -5,3 +5,5 @@ UN: nidroj
 PW: yuhhhhh
 SX: M
 AG: 20
+CW: 21
+TW: 20
