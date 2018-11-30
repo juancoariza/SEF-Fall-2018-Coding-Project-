@@ -71,7 +71,7 @@ public class CreateAccount implements Initializable {
     private TextField mainUsernameInfo;
 
     @FXML
-    private PasswordField mainPasswordInfo;
+    private TextField mainPasswordInfo;
 
     @FXML
     private Button createAcctButton;
@@ -138,15 +138,22 @@ public class CreateAccount implements Initializable {
 
     }
 
-    public boolean checkPasswordLength(PasswordField mainPasswordInfo) {
+    public boolean checkPasswordLength(TextField mainPasswordInfo) {
 
         boolean validPasswordLength;
 
-        if (mainPasswordInfo.getLength() < 8 || mainPasswordInfo.getLength() > 15) {
+        if (mainPasswordInfo.getLength() < 8) {
             shortPasswordErrorMSG.setVisible(true);
             validPasswordLength = false;
 
-        } else {
+        } else if (mainPasswordInfo.getLength() > 15) {
+            shortPasswordErrorMSG.setText("* Password cannot exceed 15 characters");
+            shortPasswordErrorMSG.setVisible(true);
+            validPasswordLength = false;
+
+        }
+
+        else {
             shortPasswordErrorMSG.setVisible(false);
             validPasswordLength = true;
         }
@@ -154,7 +161,7 @@ public class CreateAccount implements Initializable {
         return validPasswordLength;
     }
 
-    public boolean checkMatchingPasswords(PasswordField mainPasswordInfo, PasswordField confirmPasswordInfo) {
+    public boolean checkMatchingPasswords(TextField mainPasswordInfo, PasswordField confirmPasswordInfo) {
 
         boolean samePasswords;
 
@@ -195,7 +202,7 @@ public class CreateAccount implements Initializable {
                     // can be called and save to their respective classes/databases here
                     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////EDIT THIS
                     setUserEmail(mainUsernameInfo.getText());               ///TODO: THIS IS A MAJOR CHANGE
-                    setPassword(mainPasswordInfo.getText());                ///TODO:THIS IS A MAJOR CHANGE
+                    setPassword(mainPasswordInfo.getText());                ///TODO: THIS IS A MAJOR CHANGE
                 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 

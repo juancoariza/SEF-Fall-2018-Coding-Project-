@@ -31,6 +31,6 @@ public class testNutritionStatsDriver {
 
     private static double UserCurrWeight = 212.15;
     private static double UserGoalWeight = 150.12;
-    private static String UserLastWorkout = "ur mom oooooooo";
+    private static String UserLastWorkout = "Seated Incline Bicep Curls";
 
 }

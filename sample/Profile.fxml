@@ -6,16 +6,21 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="mainLoginScreen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" stylesheets="@Profile.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Profile">
+<AnchorPane fx:id="mainLoginScreen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" styleClass="background" stylesheets="@MASTER.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Profile">
     <padding>
         <Insets bottom="200.0" left="200.0" right="200.0" top="200.0" />
     </padding>
     <children>
-        <Button fx:id="finalizeAcctButton" layoutX="151.0" layoutY="441.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="149.0" text="Submit Profile" />
-        <Label fx:id="acctText" layoutX="217.0" layoutY="24.0" prefHeight="50.0" prefWidth="180.0" text="User Details" textAlignment="CENTER">
+        <Button fx:id="finalizeAcctButton" layoutX="151.0" layoutY="441.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="149.0" stylesheets="@MASTER.css" text="Submit Profile">
+            <effect>
+                <DropShadow color="#00000080" offsetX="5.0" offsetY="5.0" spread="0.21" />
+            </effect>
+        </Button>
+        <Label id="labelHeader" fx:id="acctText" layoutX="233.0" layoutY="26.0" prefHeight="50.0" prefWidth="135.0" stylesheets="@MASTER.css" text="User Details" textAlignment="CENTER">
             <padding>
                 <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
             </padding>
@@ -23,24 +28,28 @@
                 <Font name="Lucida Sans Demibold" size="12.0" />
             </font>
         </Label>
-        <Label fx:id="mainNameLabel" layoutX="68.0" layoutY="84.0" text="Name" />
-        <TextField fx:id="nameCollector" layoutX="68.0" layoutY="116.0" prefHeight="25.0" prefWidth="180.0" />
-      <Label alignment="TOP_CENTER" layoutX="334.0" layoutY="207.0" prefHeight="134.0" prefWidth="201.0" text="Would you like to share your fitness activity with other users?" wrapText="true">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-        <Label fx:id="ageLabel" layoutX="68.0" layoutY="226.0" text="Age" />
+        <Label id="labelTextField" fx:id="mainNameLabel" layoutX="68.0" layoutY="84.0" stylesheets="@MASTER.css" text="Name" />
+        <TextField fx:id="nameCollector" layoutX="68.0" layoutY="116.0" prefHeight="25.0" prefWidth="180.0" styleClass="textField" stylesheets="@MASTER.css" />
+        <Label id="labelTextField" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="334.0" layoutY="207.0" prefHeight="134.0" prefWidth="201.0" stylesheets="@MASTER.css" text="Would you like to share your fitness activity with other users?" textAlignment="CENTER" wrapText="true">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label id="labelTextField" fx:id="ageLabel" layoutX="68.0" layoutY="226.0" stylesheets="@MASTER.css" text="Age" />
         <ChoiceBox fx:id="userAge" layoutX="68.0" layoutY="259.0" prefHeight="30.0" prefWidth="53.0" />
         <ChoiceBox fx:id="userSex" layoutX="151.0" layoutY="259.0" prefHeight="30.0" prefWidth="53.0" />
-        <TextField fx:id="usernameCollector" layoutX="68.0" layoutY="189.0" prefHeight="25.0" prefWidth="180.0" />
-        <Label fx:id="sexLabel" layoutX="151.0" layoutY="226.0" text="Sex" />
-        <Label fx:id="mainUsernameLabel" layoutX="68.0" layoutY="159.0" prefHeight="30.0" prefWidth="180.0" text="Username" />
-        <Button fx:id="cancelToLoginButton" layoutX="334.0" layoutY="441.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="85.0" text="Cancel" />
-      <Label layoutX="166.0" layoutY="333.0" text="Target Weight" />
-      <TextField fx:id="TargetWeight" layoutX="172.0" layoutY="359.0" prefHeight="25.0" prefWidth="64.0" />
-      <Label layoutX="62.0" layoutY="333.0" text="Current Weight" />
-      <TextField fx:id="CurrentWeight" layoutX="68.0" layoutY="359.0" prefHeight="25.0" prefWidth="64.0" />
-      <RadioButton fx:id="PrivacyRadio" layoutX="396.0" layoutY="298.0" mnemonicParsing="false" text="Yes" />
+        <TextField fx:id="usernameCollector" layoutX="68.0" layoutY="189.0" prefHeight="25.0" prefWidth="180.0" styleClass="textField" stylesheets="@MASTER.css" />
+        <Label id="labelTextField" fx:id="sexLabel" layoutX="151.0" layoutY="226.0" stylesheets="@MASTER.css" text="Sex" />
+        <Label id="labelTextField" fx:id="mainUsernameLabel" layoutX="68.0" layoutY="159.0" prefHeight="30.0" prefWidth="180.0" stylesheets="@MASTER.css" text="Username" />
+        <Button fx:id="cancelToLoginButton" layoutX="334.0" layoutY="441.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="85.0" stylesheets="@MASTER.css" text="Cancel">
+            <effect>
+                <DropShadow color="#00000080" offsetX="5.0" offsetY="5.0" spread="0.21" />
+            </effect>
+        </Button>
+        <Label id="labelTextField" layoutX="192.0" layoutY="333.0" stylesheets="@MASTER.css" text="Target Weight" />
+        <TextField fx:id="TargetWeight" layoutX="194.0" layoutY="359.0" prefHeight="25.0" prefWidth="64.0" styleClass="textField" stylesheets="@MASTER.css" />
+        <Label id="labelTextField" layoutX="62.0" layoutY="333.0" stylesheets="@MASTER.css" text="Current Weight" />
+        <TextField fx:id="CurrentWeight" layoutX="68.0" layoutY="359.0" prefHeight="25.0" prefWidth="64.0" styleClass="textField" stylesheets="@MASTER.css" />
+        <RadioButton fx:id="PrivacyRadio" layoutX="396.0" layoutY="298.0" mnemonicParsing="false" styleClass="label" text="Yes" />
     </children>
 </AnchorPane>

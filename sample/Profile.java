@@ -27,7 +27,7 @@ import java.util.ResourceBundle;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-public class Profile implements Initializable {
+public class Profile extends CreateAccount implements Initializable {
 
     /* USER DATA TO BE COLLECTED FOR FUTURE USE */
     private String name;
@@ -158,6 +158,16 @@ public class Profile implements Initializable {
     Stage stageHere;
     Parent rootHere;
 
+    public int getChecker() {
+        return checker;
+    }
+
+    public void setChecker(int checker) {
+        this.checker = checker;
+    }
+
+    private int checker;
+
 
     /***************************************************************
      /* METHODS RELATED TO PROFILE VALUES SELECTION
@@ -193,11 +203,18 @@ public class Profile implements Initializable {
                 // if the user cancels out of creating a profile, all the input will reset to clear (or default) values
                 nameCollector.clear();
                 usernameCollector.clear();
-
                 stageHere=(Stage) cancelToLoginButton.getScene().getWindow();
                 //load up Login FXML document
                 try {
-                    rootHere = FXMLLoader.load(getClass().getResource("Login.fxml"));
+                    // if the user calls profile change from the main menu (once they've created an account), this will trigger;
+                    if (checker == 7) {
+                        rootHere = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
+                    }
+
+                    else {
+                        rootHere = FXMLLoader.load(getClass().getResource("Login.fxml"));
+                    }
+
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -343,4 +360,3 @@ public class Profile implements Initializable {
     }
 }
 
-}

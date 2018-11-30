@@ -87,13 +87,37 @@ public class MainMenu implements Initializable {
     private Pane feedMSG1;
 
     @FXML
-    private Pane feedMSG2;
+    private Label usernameFeedDisplay;
 
     @FXML
-    private Pane feedMSG3;
+    private Label workoutPresetMSG;
+
+    @FXML
+    private ImageView pfpFeedDisplay;
 
     @FXML
     private Pane feedMSG4;
+
+    @FXML
+    private Label usernameFeedDisplay1;
+
+    @FXML
+    private ImageView pfpFeedDisplay1;
+
+    @FXML
+    private Label nutritionlogPresetMSG;
+
+    @FXML
+    private Label mealDescriptionMSG;
+
+    @FXML
+    private Label carbsMSG;
+
+    @FXML
+    private Label proteinMSG;
+
+    @FXML
+    private Label fatsMSG;
 
     /***************************************************************
      /* SETTINGS TAB FXML ELEMENTS
@@ -134,14 +158,6 @@ public class MainMenu implements Initializable {
 
 
     /***************************************************************
-     /* METHODS RELATED TO TAB SWITCHING POLICIES
-     ****************************************************************/
-
-
-
-
-
-    /***************************************************************
      /* METHODS RELATED TO FITHUB ITEMS
      ****************************************************************/
 
@@ -171,8 +187,44 @@ public class MainMenu implements Initializable {
 
             fithubAnchor.getChildren().setAll((Node) FXMLLoader.load(getClass().getResource(
                 "NutritionTracker.fxml")));
+        }
 
-        } else {
+        else if (event.getSource() == signoutButton) {
+
+            stageMainMenu=(Stage) signoutButton.getScene().getWindow();
+            //load up main menu FXML document
+            try {
+                rootMainMenu = FXMLLoader.load(getClass().getResource("Login.fxml"));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            Scene scene = new Scene(rootMainMenu);
+            stageMainMenu.setScene(scene);
+            stageMainMenu.show();
+
+        }
+
+        else if (event.getSource() == changeUserProfileButton) {
+
+            stageMainMenu=(Stage) changeUserProfileButton.getScene().getWindow();
+            //load up main menu FXML document
+            try {
+                rootMainMenu = FXMLLoader.load(getClass().getResource("Profile.fxml"));
+                new Profile().setChecker(7);
+
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            Scene scene = new Scene(rootMainMenu);
+            stageMainMenu.setScene(scene);
+            stageMainMenu.show();
+
+        }
+
+        else {
 
             // known bug: doing this creates a copy of the entire main menu screen (tabs included))
             // This can be solved by setting the default 4-option fit hub menu into its own FXML file that is loaded
