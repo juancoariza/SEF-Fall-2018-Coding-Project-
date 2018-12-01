@@ -124,7 +124,7 @@ public class Login extends CreateAccount implements Initializable {
     public void searchUsers() {
 
         try {
-            Scanner sc = new Scanner(new File("src/sample/UserInfo.txt"));
+            Scanner sc = new Scanner(new File("sample/UserInfo.txt"));
             while (sc.hasNextLine()) {
                 String line = sc.nextLine().substring(4);
                 if (mainUsernameInfo.getText().equals(line)) {
@@ -136,7 +136,6 @@ public class Login extends CreateAccount implements Initializable {
                     user.age = sc.nextLine().substring(4);
                     user.targetWeight = sc.nextLine().substring(4);       ///ADD TARGET WEIGHT
                     user.currentWeight = sc.nextLine().substring(4);    ///AD CURRENT WEIGHT
-                    System.out.println(password);
 
                 } else {
                     existingUsernameErrorMSG.setText("* This email is not in our system. Try again or Create an Account");
