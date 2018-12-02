@@ -187,15 +187,14 @@
                                 <Image url="@Avatar2.jpg" />
                             </image>
                         </ImageView>
-                        <Label id="description" fx:id="nameDisplay" layoutX="199.0" layoutY="23.0" prefHeight="17.0" prefWidth="97.0" stylesheets="@MASTER.css" text="Kyle Iverson" />
-                        <Label id="description" fx:id="usernameDisplay" layoutX="199.0" layoutY="47.0" prefHeight="17.0" prefWidth="180.0" stylesheets="@MASTER.css" text="Ranchboi" />
+                        <Label id="description" fx:id="nameDisplay" layoutX="199.0" layoutY="23.0" prefHeight="17.0" prefWidth="97.0" stylesheets="@MASTER.css" text="name" />
+                        <Label id="description" fx:id="usernameDisplay" layoutX="199.0" layoutY="47.0" prefHeight="17.0" prefWidth="180.0" stylesheets="@MASTER.css" text="username" />
                         <Button fx:id="signoutButton" layoutX="427.0" layoutY="74.0" mnemonicParsing="false" onAction="#handleFitHubButtonAction" prefHeight="29.0" prefWidth="160.0" text="Sign Out">
                             <effect>
                                 <DropShadow color="#00000080" offsetX="5.0" offsetY="5.0" spread="0.21" />
                             </effect>
                         </Button>
-                        <Label id="description" layoutX="199.0" layoutY="78.0" stylesheets="@MASTER.css" text="Male" />
-                        <Label id="description" layoutX="241.0" layoutY="78.0" stylesheets="@MASTER.css" text="19" />
+                        <Label id="description" fx:id="SexAgeLabel" layoutX="199.0" layoutY="78.0" stylesheets="@MASTER.css" text="Age Sex" />
                     </children>
                 </AnchorPane>
             </content>

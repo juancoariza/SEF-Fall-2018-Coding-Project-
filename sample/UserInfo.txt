@@ -1,8 +1,8 @@
 ------------------
-EM: jordin323@gmail.com
+EM: jordin513@gmail.com
 NM: Jordin
 UN: nidroj
-PW: yuhhhhh
+PW: test
 SX: M
 AG: 20
 ------------------

@@ -156,6 +156,9 @@ public class MainMenu implements Initializable {
     @FXML
     private Button signoutButton;
 
+    @FXML
+    private Label SexAgeLabel;
+
 
     /***************************************************************
      /* METHODS RELATED TO FITHUB ITEMS
@@ -249,6 +252,13 @@ public class MainMenu implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+
+        nameDisplay.setText(Login.user.name);
+        usernameDisplay.setText(Login.user.username);
+        SexAgeLabel.setText("Sex: "+Login.user.sex + " Age: "+ Login.user.age);
+        usernameFeedDisplay.setText(Login.user.username);
+        usernameFeedDisplay1.setText(Login.user.username);
 
 
     }

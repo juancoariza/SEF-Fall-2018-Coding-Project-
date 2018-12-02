@@ -26,8 +26,8 @@ public class Login extends CreateAccount implements Initializable {
      /* LOGIN FXML ELEMENTS
      ****************************************************************/
 
-    User user = new User();
-    String password = "";
+    static User user = new User();
+    static String password = "";
     String email = "";
 
     @FXML
@@ -62,6 +62,8 @@ public class Login extends CreateAccount implements Initializable {
 
     @FXML
     private Label hook;
+
+
 
     /***************************************************************
      /* METHODS RELATED TO INPUT VERIFICATION
