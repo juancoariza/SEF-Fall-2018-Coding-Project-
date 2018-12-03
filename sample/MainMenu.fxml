@@ -104,30 +104,24 @@
                             <children>
                                 <Pane fx:id="feedMSG1" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #253651#253651;" styleClass="pane">
                                     <children>
-                                        <Label fx:id="usernameFeedDisplay" layoutX="63.0" layoutY="15.0" prefHeight="17.0" prefWidth="53.0" text="Ranchboi" />
-                                        <Label fx:id="workoutPresetMSG" layoutX="216.0" layoutY="15.0" text="completed the workout set: " />
+                                        <Label fx:id="usernameFeedDisplay" layoutX="63.0" layoutY="15.0" prefHeight="17.0" prefWidth="99.0" text="Ranchboi" />
                                         <ImageView fx:id="pfpFeedDisplay" fitHeight="120.0" fitWidth="120.0" layoutX="56.0" layoutY="40.0" pickOnBounds="true">
                                             <image>
                                                 <Image url="@baseUsers.png" />
                                             </image>
                                         </ImageView>
-                                        <Label layoutX="219.0" layoutY="57.0" text="V-Bar Push-downs" />
-                                        <Label layoutX="219.0" layoutY="100.0" text="Seated Incline Bicep Curls" />
+                              <Label fx:id="InfoSection1" layoutX="216.0" layoutY="49.0" prefHeight="115.0" prefWidth="278.0" />
                                     </children>
                                 </Pane>
                                 <Pane fx:id="feedMSG4" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #253651#253651;" styleClass="pane" GridPane.rowIndex="1">
                                     <children>
-                                        <Label fx:id="usernameFeedDisplay1" layoutX="70.0" layoutY="17.0" prefHeight="17.0" prefWidth="53.0" text="Ranchboi" />
+                                        <Label fx:id="usernameFeedDisplay1" layoutX="70.0" layoutY="17.0" prefHeight="17.0" prefWidth="98.0" text="Ranchboi" />
                                         <ImageView fx:id="pfpFeedDisplay1" fitHeight="120.0" fitWidth="120.0" layoutX="56.0" layoutY="42.0" pickOnBounds="true">
                                             <image>
                                                 <Image url="@baseUsers.png" />
                                             </image>
                                         </ImageView>
-                                        <Label fx:id="nutritionlogPresetMSG" layoutX="227.0" layoutY="26.0" text="entered the following nutrition log: " />
-                                        <Label fx:id="mealDescriptionMSG" layoutX="227.0" layoutY="56.0" prefHeight="17.0" prefWidth="278.0" text="&quot;Nutritious breakfast of eggs, ham,and orange juice&quot;" />
-                                        <Label fx:id="carbsMSG" layoutX="227.0" layoutY="80.0" text="Carbs: 40 grams" />
-                                        <Label fx:id="proteinMSG" layoutX="227.0" layoutY="102.0" text="Fats: 8 grams" />
-                                        <Label fx:id="fatsMSG" layoutX="227.0" layoutY="128.0" text="Protein: 15 grams" />
+                                        <Label fx:id="InfoSection2" layoutX="227.0" layoutY="56.0" prefHeight="107.0" prefWidth="309.0" />
                                     </children>
                                 </Pane>
                             </children>
