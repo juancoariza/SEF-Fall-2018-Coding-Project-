@@ -87,8 +87,10 @@ public class MainMenu implements Initializable {
     private Pane feedMSG1;
 
     @FXML
-    static public Label usernameFeedDisplay;
+    private Label usernameFeedDisplay;
 
+    @FXML
+    private Label workoutPresetMSG;
 
     @FXML
     private ImageView pfpFeedDisplay;
@@ -97,22 +99,25 @@ public class MainMenu implements Initializable {
     private Pane feedMSG4;
 
     @FXML
-    static public Label usernameFeedDisplay1;
+    private Label usernameFeedDisplay1;
 
     @FXML
     private ImageView pfpFeedDisplay1;
+
+    @FXML
+    private Label nutritionlogPresetMSG;
+
     @FXML
     private Label mealDescriptionMSG;
 
     @FXML
-    private Label workoutset;
-
-
-    @FXML
-    static public Label InfoSection1;
+    private Label carbsMSG;
 
     @FXML
-    static public Label InfoSection2;
+    private Label proteinMSG;
+
+    @FXML
+    private Label fatsMSG;
 
     /***************************************************************
      /* SETTINGS TAB FXML ELEMENTS

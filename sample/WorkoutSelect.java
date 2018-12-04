@@ -1,6 +1,5 @@
 package sample;
 
-import com.sun.corba.se.spi.orbutil.threadpool.Work;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -72,19 +71,14 @@ public class WorkoutSelect implements Initializable {
             // all workouts performed by the user in the current run will be stored and sent elsewhere
             WorkoutArrayToUserData.addAll(WorkoutArray);
             WorkoutLabel.setText("Workout Complete\n\n");
-            ReplaceLabelText(WorkoutLabel);
+            for (String exercise : WorkoutArray) {
+                WorkoutLabel.setText(WorkoutLabel.getText() + " " + exercise + "\n");
+
+            }
             StartButton.setText("Start");
         } else {
             WorkoutLabel.setText("Workout in progress");
             StartButton.setText("Stop");
-        }
-
-    }
-
-    void ReplaceLabelText(Label label){
-        for (String exercise : WorkoutArray) {
-            label.setText(label.getText() + " " + exercise + "\n");
-
         }
 
     }
@@ -163,6 +157,7 @@ public class WorkoutSelect implements Initializable {
 
     }
 
+//  public void ChooseWorkoutSet();
 
     public void loadRightsideListview() {
 
