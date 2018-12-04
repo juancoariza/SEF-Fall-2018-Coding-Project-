@@ -51,7 +51,7 @@ public class WorkoutSelect implements Initializable {
     private Label WorkoutLabel;
 
 
-    ArrayList<String> WorkoutArray = new ArrayList<String>();
+    static ArrayList<String> WorkoutArray = new ArrayList<String>();
     ArrayList<String> WorkoutArrayToUserData = new ArrayList<String>();
     String choice;
 

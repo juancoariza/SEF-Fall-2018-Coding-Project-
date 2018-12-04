@@ -126,7 +126,7 @@ public class Login extends CreateAccount implements Initializable {
     public void searchUsers() {
 
         try {
-            Scanner sc = new Scanner(new File("sample/UserInfo.txt"));
+            Scanner sc = new Scanner(new File("src/sample/UserInfo.txt"));
             while (sc.hasNextLine()) {
                 String line = sc.nextLine().substring(4);
                 if (mainUsernameInfo.getText().equals(line)) {
